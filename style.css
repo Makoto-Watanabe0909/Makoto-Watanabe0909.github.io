@@ -12,7 +12,7 @@ body {
 	/*font-family: 'Times New Roman', Times, 'serif''Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'}*/
 }
 
-.songtitle{
+.test{
 	position: absolute;
 	top: 20px;
   	left: 25px;
@@ -21,39 +21,19 @@ body {
 	font-weight: bold;
 }
 
-.songdata{
-	position: absolute;
-	top: 50px;
-  	left: 30px;
-	font-size : 3px;
-	line-height: 1;
-	text-align: left;
-	white-space:pre-wrap;
-	font-weight: bold;
-}
-
-.lyrics{
-	position: absolute;
-	white-space: pre-wrap;
-	top: 95px;
-    left: 35px;
-    font-size : 10px;
-    line-height: 1;
-}
-
-.lyrics2{
-	position: absolute;
-    top: 365px;
-    left: 235px;
-	font-size : 10px;
-	width: 350px;
-    line-height: 1;
-    white-space: pre-wrap;
-}
-
 #newspaper {
 	display : block;
 	position: absolute;
 	width:380px;
 	height:527px;
+}
+
+.drag-and-drop {
+    cursor: move;
+    position: absolute;
+    z-index: 1000;
+}
+
+.drag {
+    z-index: 1001;
 }
