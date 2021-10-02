@@ -2,12 +2,7 @@
 /* CSS Document */
 
 body {
-	position: absolute;
-	left: 0px;
 	background: #CC0000;
-	color : red;
-	font-size : 20px;	
-	text-align: left;
 	font-family: 'Times New Roman', "ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
 	/*font-family: 'Times New Roman', Times, 'serif''Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'}*/
 }
@@ -22,10 +17,16 @@ body {
 }
 
 #newspaper {
-	display : block;
 	position: absolute;
 	width:380px;
 	height:527px;
+}
+
+#testBox {
+	position: absolute;
+	background: #3100FF;
+	color : white;
+	font-size : 10px;
 }
 
 .drag-and-drop {
