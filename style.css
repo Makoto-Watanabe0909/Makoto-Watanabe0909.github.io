@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
 
+element {
+}
+
 body {
 	background: #CC0000;
 	font-family: 'Times New Roman', "ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
@@ -16,25 +19,53 @@ body {
 	font-weight: bold;
 }
 
+#forTest {
+	background-color: black;
+	width:10px;
+	height:10px;
+}
+
 #newspaper {
 	position: absolute;
-	width:380px;
-	height:527px;
+	z-index: 1;
+	
+	margin-bottom: auto;
+	margin-top: auto;
+	/*margin-left: 10px;*/
+	
+	display: block;
+	
+	width:100vw;
+	height:100vw*527/380;
+	
+	cursor: move;
 }
 
-#testBox {
+#shop {
 	position: absolute;
-	background: #3100FF;
-	color : white;
-	font-size : 10px;
+	z-index: 0;
+	
+	margin-bottom: auto;
+	
+	margin-left: 33vw;
+	margin-top: 50vh;
+	
+	display: block;
+	
+	width:50vw;
+	height:50vw*9000/5861;
+	
+	cursor: move;
 }
 
-.drag-and-drop {
-    cursor: move;
-    position: absolute;
-    z-index: 1000;
+/*タブレット用*/
+@media (min-width: 768px){
+	#newspaper {
+	}
 }
 
-.drag {
-    z-index: 1001;
+/*デスクトップ用*/
+@media (min-width: 1024px){
+	#newspaper {
+	}	
 }
