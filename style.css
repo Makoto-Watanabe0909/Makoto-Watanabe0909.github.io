@@ -5,18 +5,9 @@ element {
 }
 
 body {
-	background: #CC0000;
+	background: #CCF4E8;
 	font-family: 'Times New Roman', "ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
 	/*font-family: 'Times New Roman', Times, 'serif''Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'}*/
-}
-
-.test{
-	position: absolute;
-	top: 20px;
-  	left: 25px;
-	font-size : 40px;
-	line-height: 1;
-	font-weight: bold;
 }
 
 #forTest {

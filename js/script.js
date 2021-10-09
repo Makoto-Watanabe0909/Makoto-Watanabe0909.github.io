@@ -3,6 +3,7 @@
 alert("Extra Texture!!!");
 
 var newspaper = document.getElementById("newspaper"); //新聞を拾ってくる
+var shop = document.getElementById("shop"); //店
 var forTest = document.getElementById("forTest"); //デバッグ用オブジェクト
 newspaper.style.position = "absolute"; //位置基準の変更
 
@@ -21,8 +22,34 @@ if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
   document.addEventListener('touchmove', disableScroll, { passive: false });
 } else {} //PCと端末で違う方法でドラッグの動作を実装している。
 
+var isMoving = false;//新聞紙を動かしている時にTRUE
+var isPlaying = false;
+var max = 6;//効果音のファイル数
+var soundIndex = 0;
+var crumple = [new Audio(),new Audio(),new Audio(),new Audio(),new Audio(),new Audio()];
+for (let i = 0; i < max; i++) {
+    crumple[i].preload = "auto";
+	crumple[i].src = "sound/crumple_"+ i + ".wav";
+    crumple[i].load();
+	crumple[i].addEventListener("ended", function () {
+      crumple[i].currentTime = 0;
+	  if(isMoving){
+		musicPlay(); //まだ移動中だったら次のファイルを再生
+	  }else{
+		isPlaying = false;
+	  }
+	  isMoving = false;
+    }, false);
+}
+
+function musicPlay() {
+	soundIndex = Math.floor(Math.random() * max);
+    crumple[soundIndex].play();
+	isPlaying = true;
+}
+
 newspaper.onmousedown = function (event) { //マウスを押した時
-	
+  musicPlay();
   if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
   } else {
     mouseX1 = event.clientX;
@@ -33,12 +60,14 @@ newspaper.onmousedown = function (event) { //マウスを押した時
 }
 
 newspaper.onmouseup = function (event) { //マウスを離した時
+  isMoving = false;
   npX = newspaper.offsetLeft;
   npY = newspaper.offsetTop;
   document.removeEventListener("mousemove", onMouseMove);
 }
 
 newspaper.onmouseout = function (event) { //マウスが新聞から外れた時（マウスがウィンドウの外に出た場合を想定）
+  isMoving = false;
   npX = newspaper.offsetLeft;
   npY = newspaper.offsetTop;
   document.removeEventListener("mousemove", onMouseMove);
@@ -49,6 +78,8 @@ newspaper.ondragstart = function (event) { //ドラッグを始めた時
 } //何か知らんけどこれが無いと綺麗に動かない。
 
 var onMouseMove = function (event) {
+  if(!isPlaying)musicPlay();
+  isMoving = true;
   var mouseX2;
   var mouseY2;
 
@@ -62,6 +93,7 @@ var onMouseMove = function (event) {
 /*==========以下、端末用============================================================*/
 
 function touchStartEvent(event) {
+  shop.style.opacity = 1.0;
   mouseX1 = event.touches[0].pageX;
   mouseY1 = event.touches[0].pageY;
 }
@@ -83,7 +115,6 @@ function touchEndEvent(event) {
 }
 
 function disableScroll(event) {
-	
   var xxx = event.touches[0].pageX;
   var yyy = event.touches[0].pageY;
 	
@@ -93,14 +124,8 @@ function disableScroll(event) {
   var pH = newspaper.height;
 	
   if (xxx > pX && xxx < pX + pW && yyy > pY && yyy < pY + pH) {
-	  forTest.style.backgroundColor = "#00ff00";
   	if (event.touches.length == 1) {
-	  	forTest.style.backgroundColor = "#0000ff";
   		event.preventDefault();
-  	}else{
-	  	forTest.style.backgroundColor = "#ffffff";
-	}//スクロールは禁止　でもピンチはOK（接している指の本数で判定）
-  }else{
-	  forTest.style.backgroundColor = "#ff0000";
+  	}//スクロールは禁止　でもピンチはOK（接している指の本数で判定）
   }
 }
