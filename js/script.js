@@ -2,8 +2,11 @@
 
 alert("Extra Texture!!!");
 
+console.log("スクリプト動いてます");
+
 var newspaper = document.getElementById("newspaper"); //新聞を拾ってくる
 var shop = document.getElementById("shop"); //店
+var clicktoenter = document.getElementById("click"); //クリックの表示
 var forTest = document.getElementById("forTest"); //デバッグ用オブジェクト
 newspaper.style.position = "absolute"; //位置基準の変更
 
@@ -26,6 +29,7 @@ var isMoving = false;//新聞紙を動かしている時にTRUE
 var isPlaying = false;
 var max = 6;//効果音のファイル数
 var soundIndex = 0;
+
 var crumple = [new Audio(),new Audio(),new Audio(),new Audio(),new Audio(),new Audio()];
 for (let i = 0; i < max; i++) {
     crumple[i].preload = "auto";
@@ -49,6 +53,7 @@ function musicPlay() {
 }
 
 newspaper.onmousedown = function (event) { //マウスを押した時
+　console.log("カチッ");
   musicPlay();
   if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)) {
   } else {
@@ -60,10 +65,14 @@ newspaper.onmousedown = function (event) { //マウスを押した時
 }
 
 newspaper.onmouseup = function (event) { //マウスを離した時
+　console.log("パッ");
   isMoving = false;
   npX = newspaper.offsetLeft;
   npY = newspaper.offsetTop;
   document.removeEventListener("mousemove", onMouseMove);
+	
+  shop.style.opacity = 1.0; // 店の画像を表示する処理をここでしてしまう
+  clicktoenter.style.opacity = 1.0; // クリックの表示のやつも
 }
 
 newspaper.onmouseout = function (event) { //マウスが新聞から外れた時（マウスがウィンドウの外に出た場合を想定）
