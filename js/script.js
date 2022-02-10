@@ -1,6 +1,6 @@
 //参考 : https://qiita.com/yonedaco/items/ea234e95473d739c7447
 
-alert("Extra Texture!!!");
+//alert("Extra Texture!!!");
 
 console.log("スクリプト動いてます");
 
@@ -62,6 +62,9 @@ newspaper.onmousedown = function (event) { //マウスを押した時
   } //その瞬間の座標を記録
 
   document.addEventListener("mousemove", onMouseMove); //マウスを動かした時に呼ばれる関数を有効に
+	
+  shop.style.opacity = 1.0; // 店の画像を表示する処理をここでしてしまう
+  clicktoenter.style.opacity = 1.0; // クリックの表示のやつも
 }
 
 newspaper.onmouseup = function (event) { //マウスを離した時
@@ -70,9 +73,6 @@ newspaper.onmouseup = function (event) { //マウスを離した時
   npX = newspaper.offsetLeft;
   npY = newspaper.offsetTop;
   document.removeEventListener("mousemove", onMouseMove);
-	
-  shop.style.opacity = 1.0; // 店の画像を表示する処理をここでしてしまう
-  clicktoenter.style.opacity = 1.0; // クリックの表示のやつも
 }
 
 newspaper.onmouseout = function (event) { //マウスが新聞から外れた時（マウスがウィンドウの外に出た場合を想定）

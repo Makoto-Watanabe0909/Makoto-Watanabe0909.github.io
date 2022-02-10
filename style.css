@@ -5,7 +5,7 @@ element {
 }
 
 body {
-	background: #FFFFFF;
+	background: #FFF000;
 	font-family: 'Times New Roman', "ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
 	/*font-family: 'Times New Roman', Times, 'serif''Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'}*/
 }
@@ -59,8 +59,19 @@ body {
 	position: absolute;
 	width:15vw;
 	height:15vw*9000/5861;
-	
-	text-decoration: blink;
+}
+
+.blink{
+	-webkit-animation: blink 1s ease infinite;
+	animation: blink 1s ease infinite;
+}
+@-webkit-keyframes blink {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes blink {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
 /*タブレット用*/

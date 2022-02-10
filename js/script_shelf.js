@@ -1,7 +1,5 @@
 //参考 : https://qiita.com/WitTarou/items/7d791e0d6c5e2bc36c4c
 
-alert("What can I do for you?");
-
 console.log("スクリプト動いてます");
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -25,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     resizeFix();
 
     window.addEventListener('resize', function () {
+		console.log("リサイズ");
         resizeFix();
     });
 });
