@@ -63,64 +63,6 @@ body {
 	text-decoration: blink;
 }
 
-.space {
-}
-	
-.space #shelf {
-    position: relative;
-	width:100vw;
-	height:100vw*9000/2734;
-}
-
-.space .jacket {
-	cursor: pointer;
-}
-
-#poster {
-    position: absolute;
-	width:10vw;
-	top: 70vh;
-	left: 33vw;
-}
-
-#modulin {
-    position: relative;
-	top: 88vh;
-	left: 55vw;
-}
-
-#songpass {
-    position: relative;
-	top: 88vh;
-	left: 66vw;
-}
-
-#musicframe {
-    position: relative;
-	top: 88vh;
-	left: 77vw;
-}
-
-#brandout {
-    position: relative;
-	top: 151vh;
-	left: 60vw;
-}
-
-#orgelorgan {
-    position: relative;
-	top: 149vh;
-	left: 71vw;
-}
-
-#medikari {
-    position: relative;
-	top: 170vh;
-	left: 82vw;
-	width: 6%;
-}
-
-
 /*タブレット用*/
 @media (min-width: 768px){
 	#newspaper {
