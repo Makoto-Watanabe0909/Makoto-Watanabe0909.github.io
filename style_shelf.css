@@ -8,79 +8,30 @@ body {
 	background: #FFFFFF;
 	font-family: 'Times New Roman', "ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
 	/*font-family: 'Times New Roman', Times, 'serif''Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'}*/
-}
-
-#forTest {
-	background-color: black;
-	width:10px;
-	height:10px;
-}
-
-#newspaper {
-	position: absolute;
-	z-index: 1;
-	
-	margin-bottom: auto;
-	margin-top: auto;
-	/*margin-left: 10px;*/
-	
-	display: block;
-	
-	width:100vw;
-	height:100vw*527/380;
-	
-	cursor: move;
-}
-
-#shop {
-	position: absolute;
-	z-index: 0;
-	opacity: 0;
-	
-	margin-bottom: auto;
-	
-	margin-left: 33vw;
-	margin-top: 50vh;
-	
-	display: block;
-	
-	width:50vw;
-	height:50vw*9000/5861;
-	
-	cursor: pointer;
-}
-
-#click {
-	margin-left: 33vw;
-	margin-top: 70vh;
-	
-	opacity: 0;
-	
-	position: absolute;
-	width:15vw;
-	height:15vw*9000/5861;
-	
-	text-decoration: blink;
+  width: 100%;
+  height: 75vw;
 }
 
 .space {
+  position: relative;
+  width:100%;
+  min-width: 1200px;
 }
 	
-.space #shelf {
-    position: relative;
-	width:100vw;
-	height:100vw*9000/2734;
-}
-
 .space .jacket {
 	cursor: pointer;
 }
 
+#shelf {
+	width:100vw;
+	height:100vw*9001/2734;
+}
+
 #poster {
-    position: absolute;
-	width:10vw;
-	top: 70vh;
-	left: 33vw;
+	position:absolute;
+	bottom: 0;
+    right: 300px;
+    width: 400px
 }
 
 #modulin {
@@ -131,4 +82,11 @@ body {
 @media (min-width: 1024px){
 	#newspaper {
 	}	
+}
+
+.wrap {
+    height: 1080px;
+    width: 1920px;
+    position: absolute;
+    transform-origin: 0% 0%;
 }
