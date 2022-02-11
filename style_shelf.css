@@ -1,88 +1,30 @@
-@charset "UTF-8";
 /* CSS Document */
 
-element {
+iframe[src$=".pdf#toolbar=0&navpanes=0'"]{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+	height:90vh;
 }
 
-body {
-	background: #FFFFFF;
-	font-family: 'Times New Roman', "ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "serif";
-	/*font-family: 'Times New Roman', Times, 'serif''Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'}*/
-}
-
-.space {
-  position: relative;
-}
+#recordplayer {
+  position: fixed;
+  cursor: pointer;
+  bottom: 40px;
+  right: 10px;
+  width: 20%;
 	
-.space .jacket {
-	cursor: pointer;
+  transition:width 0.25s;
 }
 
-#shelf {
-	width:100vw;
-	height:100vw*9001/2734;
+#recordplayer:hover {
+  width: 25%;
 }
 
-#poster {
-	position:absolute;
-	bottom: 0;
-    right: 300px;
-    width: 400px
-}
-
-#modulin {
-    position: relative;
-	top: 88vh;
-	left: 55vw;
-}
-
-#songpass {
-    position: relative;
-	top: 88vh;
-	left: 66vw;
-}
-
-#musicframe {
-    position: relative;
-	top: 88vh;
-	left: 77vw;
-}
-
-#brandout {
-    position: relative;
-	top: 151vh;
-	left: 60vw;
-}
-
-#orgelorgan {
-    position: relative;
-	top: 149vh;
-	left: 71vw;
-}
-
-#medikari {
-    position: relative;
-	top: 170vh;
-	left: 82vw;
-	width: 6%;
-}
-
-
-/*タブレット用*/
-@media (min-width: 768px){
-	#newspaper {
-	}
-}
-
-/*デスクトップ用*/
-@media (min-width: 1024px){
-	#newspaper {
-	}	
-}
-
-.wrap {
-    height: 1080px;
-    width: 1920px;
-    position: absolute;
-    transform-origin: 0% 0%;
+#songbar {
+  position: fixed;
+  cursor: pointer;
+  bottom: 10px;
+  right: 10px;
+  width: 100%;
 }
