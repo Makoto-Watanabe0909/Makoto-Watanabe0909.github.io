@@ -1,6 +1,6 @@
 console.log("スクリプト動いてます");
 
-var trackChoice = 0;
+var trackChoice = 1;
 var songsNum = 3;
 
 document.getElementById("recordplayer").onclick = function() {
