@@ -32,7 +32,6 @@ var soundIndex = 0;
 
 var crumple = [new Audio(),new Audio(),new Audio(),new Audio(),new Audio(),new Audio()];
 for (let i = 0; i < max; i++) {
-    crumple[i].preload = "auto";
 	crumple[i].src = "sound/crumple_"+ i + ".wav";
     crumple[i].load();
 	crumple[i].addEventListener("ended", function () {
@@ -45,6 +44,8 @@ for (let i = 0; i < max; i++) {
 	  isMoving = false;
     }, false);
 }
+
+crumple[0].preload = "auto";
 
 function musicPlay() {
 	soundIndex = Math.floor(Math.random() * max);
