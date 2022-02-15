@@ -41,7 +41,7 @@ iframe[src$=".pdf#toolbar=0&navpanes=0'"]{
 
 #ex {
   position: fixed;
-  width: 50%;
+  width: 80%;
   inset: 0;
   margin: auto;
   opacity: 0;
